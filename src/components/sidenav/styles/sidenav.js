@@ -1,8 +1,7 @@
 import styled from 'styled-components/macro'
 
 export const Container = styled.div`
-    height:90vh;
-    width: calc(100% / 12);
+    height:100%;
     display:flex;
     flex-direction:column;
     align-items:center;
