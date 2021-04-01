@@ -11,6 +11,12 @@ export const Container = styled.div`
 export const Group = styled.div`
     display:flex;
     flex-direction:column;    
+    .MuiSvgIcon-root {
+    height: 1.5em !important;
+    width: 1.5em !important;
+    color: #888787;
+    padding: 10px 0;
+    }
 `
 
 export const Logo = styled.div`

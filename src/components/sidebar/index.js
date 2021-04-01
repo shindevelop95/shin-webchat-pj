@@ -1,5 +1,5 @@
 import React from 'react';
-import {Container,BtnGroup,ButtonText,Header,Input,Btn} from './styles/sidebar'
+import {Container,Group,BtnGroup,ButtonText,Header,Input,Btn} from './styles/sidebar'
 
 export default function SideBar({children, ...restProps}){
     return (
@@ -26,6 +26,10 @@ SideBar.BtnGroup = function SideBarBtnGroup({children,...restProps}){
 }
 
 SideBar.Input = function SideBarInput({children,...restProps}){
-    return<Input {...restProps}>{children}</Input>
+    return<Input {...restProps}/>
+}
+
+SideBar.Group = function SideBarGroup({children,...restProps}){
+    return<Group {...restProps}>{children}</Group>
 }
 

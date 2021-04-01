@@ -1,7 +1,7 @@
 import React from 'react';
 import {SideBar} from '../components';
 import AddIcon from '@material-ui/icons/Add';
-import '../utils/utils.css'
+import SearchIcon from '@material-ui/icons/Search';
 
 export function SideBarContainer({}){
     return(
@@ -10,6 +10,11 @@ export function SideBarContainer({}){
                 <AddIcon/>
                 <SideBar.ButtonText>New Conversation</SideBar.ButtonText>
             </SideBar.BtnGroup>
+            <SideBar.Header>Chats</SideBar.Header>
+            <SideBar.Group>
+                <SideBar.Input placeholder="Search here"/>
+                <SearchIcon/>
+            </SideBar.Group>
         </SideBar>
     )
 }
