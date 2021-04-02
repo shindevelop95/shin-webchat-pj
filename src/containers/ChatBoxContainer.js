@@ -1,6 +1,9 @@
 import React, {useEffect,useState} from 'react'
 import {ChatBox,SideChat} from '../components'
 import {Avatar} from "@material-ui/core";
+import AddBoxIcon from '@material-ui/icons/AddBox';
+import SentimentVerySatisfiedIcon from '@material-ui/icons/SentimentVerySatisfied';
+import SendIcon from '@material-ui/icons/Send';
 
 export function ChatBoxContainer({}){
     const [seed,setSeed] = useState("");
@@ -18,8 +21,16 @@ export function ChatBoxContainer({}){
                 </SideChat.Info>
             </ChatBox.Heading>
             <ChatBox.Body>
-                <ChatBox.Message>Hey! What is up?</ChatBox.Message>
+                <ChatBox.Message>Hey! What is up?<ChatBox.Timestamp>52 mins ago</ChatBox.Timestamp></ChatBox.Message>
             </ChatBox.Body>
+            <ChatBox.Footer>
+                <ChatBox.Form>
+                    <AddBoxIcon color="secondary"/>
+                    <ChatBox.Input placeholder="Type a message here"/>
+                    <SentimentVerySatisfiedIcon color="disabled" fontSize="small"/>
+                    <SendIcon fontSize="small" color="secondary" />
+                </ChatBox.Form>
+            </ChatBox.Footer>
         </ChatBox>
     )
 }

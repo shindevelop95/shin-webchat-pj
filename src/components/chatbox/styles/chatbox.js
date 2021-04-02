@@ -18,8 +18,56 @@ export const Body = styled.div`
     flex:1;
     overflow:scroll;
     padding:30px;
+   &::-webkit-scrollbar {
+    display: none;
+    }
 `;
 
-export const Footer = styled.div``;
+export const Footer = styled.div`
+   width:90%;
+   height:50px;
+   margin:20px auto;
+   background-color:#FFFFFF;
+`;
 
-export const Message = styled.p``;
+export const Form = styled.form`
+     display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    .MuiSvgIcon-root{
+        height:1.8em;
+        width:1.8em;
+        margin-right:10px;
+        cursor:pointer;
+        transition:0.5s;
+    }
+
+    .MuiSvgIcon-root:hover{
+        transform:scale(1.2);
+    }
+`;
+
+export const Input = styled.input`
+    flex:1;
+    height:100%;
+    border:none;
+    height:45px;
+`;
+
+export const Message = styled.p`
+    position:relative;
+    font-size:20px;
+    background-color:#FFFFFF;
+    border-radius:10px;
+    padding:15px 20px;
+    width:fit-content;
+`;
+
+export const Timestamp = styled.span`
+    position:absolute;
+    left:11%;
+    bottom:-1%;
+    color:#B1A9A9;
+    font-size:13px;
+`;
