@@ -1,4 +1,5 @@
 import React from 'react';
+import db from '../../lib/firebase'
 import {Container,Group,BtnGroup,ButtonText,Header,Input,Btn} from './styles/sidebar'
 
 export default function SideBar({children, ...restProps}){
@@ -23,7 +24,13 @@ SideBar.Btn = function SideBarBtn({children,...restProps}){
 
 SideBar.BtnGroup = function SideBarBtnGroup({children,...restProps}){
     const createChat = () => {
-        const roomName = prompt("Please enter new chirp");
+        const roomName = prompt("Please enter new Chirp");
+
+        if(roomName){
+            db.collection("options").add({
+                name:roomName,
+            })
+        }
     }
     return<BtnGroup onClick={createChat} {...restProps}>{children}</BtnGroup>
 }
