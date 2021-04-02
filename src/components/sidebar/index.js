@@ -22,7 +22,10 @@ SideBar.Btn = function SideBarBtn({children,...restProps}){
 }
 
 SideBar.BtnGroup = function SideBarBtnGroup({children,...restProps}){
-    return<BtnGroup {...restProps}>{children}</BtnGroup>
+    const createChat = () => {
+        const roomName = prompt("Please enter new chirp");
+    }
+    return<BtnGroup onClick={createChat} {...restProps}>{children}</BtnGroup>
 }
 
 SideBar.Input = function SideBarInput({children,...restProps}){

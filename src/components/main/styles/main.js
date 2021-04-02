@@ -18,7 +18,11 @@ border-radius:20px;
 margin:8px 0`
 
 export const GroupThree = styled.div`
-flex:60%;`
+flex:60%;
+border-radius:20px;
+background-color:#F8E9E9;
+margin:8px ;
+`
 
 export const GroupFour = styled.div`
 flex:20%;`

@@ -3,6 +3,7 @@ import { Main } from '../components'
 import {SideNavContainer} from './SideNavContainer'
 import {SideBarContainer} from './SideBarContainer'
 import { SideChatContainer } from './SideChatContainer'
+import {ChatBoxContainer} from './ChatBoxContainer'
 
 export function MainContainer({}){
     return(
@@ -18,7 +19,9 @@ export function MainContainer({}){
                 <SideChatContainer/>
                 <SideChatContainer/>
             </Main.FlexboxTwo>
-            <Main.FlexboxThree>3</Main.FlexboxThree>
+            <Main.FlexboxThree>
+                <ChatBoxContainer/>
+            </Main.FlexboxThree>
             <Main.FlexboxFour>4</Main.FlexboxFour>
         </Main>
     )
