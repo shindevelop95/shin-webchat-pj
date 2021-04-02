@@ -8,9 +8,18 @@ import SendIcon from '@material-ui/icons/Send';
 export function ChatBoxContainer({}){
     const [seed,setSeed] = useState("");
 
+    const [input, setInput] = useState("");
+    console.log(input);
+
     useEffect(() => {
         setSeed(Math.floor(Math.random() *5000))
     },[])
+
+    const sendMessage = (e) => {
+        e.preventDefault();
+        console.log("u typed>>>", input);
+        setInput("");
+    }
     return(
         <ChatBox>
             <ChatBox.Heading>         
@@ -26,9 +35,14 @@ export function ChatBoxContainer({}){
             <ChatBox.Footer>
                 <ChatBox.Form>
                     <AddBoxIcon color="secondary"/>
-                    <ChatBox.Input placeholder="Type a message here"/>
+                    <ChatBox.Input 
+                        value={input}
+                        onChange={(e) => setInput(e.target.value)}
+                        placeholder="Type a message here"/>
                     <SentimentVerySatisfiedIcon color="disabled" fontSize="small"/>
-                    <SendIcon fontSize="small" color="secondary" />
+                    <ChatBox.Button onClick={sendMessage} type="submit">
+                        <SendIcon fontSize="small" color="secondary" />
+                    </ChatBox.Button>
                 </ChatBox.Form>
             </ChatBox.Footer>
         </ChatBox>

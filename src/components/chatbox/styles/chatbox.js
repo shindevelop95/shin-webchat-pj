@@ -55,6 +55,14 @@ export const Input = styled.input`
     height:45px;
 `;
 
+export const Button = styled.button`
+    background-color:transparent;
+    border:none;
+    &:focus{
+        outline:none;
+    }
+`;
+
 export const Message = styled.p`
     position:relative;
     font-size:20px;

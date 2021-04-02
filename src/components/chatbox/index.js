@@ -1,5 +1,5 @@
 import React from 'react';
-import {Container,Heading,Body,Footer,Message,Timestamp,Form,Input} from './styles/chatbox'
+import {Container,Heading,Body,Footer,Message,Timestamp,Form,Input,Button} from './styles/chatbox'
 
 export default function ChatBox({children, ...restProps}){
     return (
@@ -35,4 +35,8 @@ ChatBox.Form = function ChatBoxForm({children,...restProps}){
 
 ChatBox.Input = function ChatBoxInput({children,...restProps}){
     return <Input {...restProps}/>
+}
+
+ChatBox.Button = function ChatBoxButton({children,...restProps}){
+    return <Button {...restProps}>{children}</Button>
 }
