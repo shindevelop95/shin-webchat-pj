@@ -7,11 +7,14 @@ import NotificationsActiveIcon from '@material-ui/icons/NotificationsActive';
 import PeopleIcon from '@material-ui/icons/People';
 import SettingsIcon from '@material-ui/icons/Settings';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
+import {Link} from 'react-router-dom'
 
 export function SideNavContainer({}){
     return(
         <SideNav>
+        <Link to ="/">
              <SideNav.Logo/>
+             </Link>
             <SideNav.Group>
                 <SideNav.Button>
                     <DateRangeIcon/>

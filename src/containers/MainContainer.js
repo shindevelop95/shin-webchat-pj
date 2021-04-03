@@ -12,7 +12,7 @@ export function MainContainer({}){
     const [options, setOptions] = useState([])
 
     useEffect(() => {
-       const unsubscribe = db.collection("options").onSnapshot((snapshot) => 
+       const unsubscribe = db.collection("rooms").onSnapshot((snapshot) => 
             setOptions(
                 snapshot.docs.map((doc) => ({
                     id:doc.id,
@@ -37,18 +37,18 @@ export function MainContainer({}){
                     <SideChatContainer key={option.id} id={option.id} name={option.data.name}/>
                 ))}
             </Main.FlexboxTwo>
-           <Switch>
-           <Route path="/rooms/:roomId">
-           <Main.FlexboxThree>
-                <ChatBoxContainer/>
-            </Main.FlexboxThree>
-           </Route>
-           <Route path="/">
-           <Main.FlexboxThree>
-                <ChatBoxContainer/>
-            </Main.FlexboxThree>
-           </Route>
-           </Switch>
+            <Switch>
+                <Route path="/rooms/:roomId">
+                <Main.FlexboxThree>
+                    <ChatBoxContainer/>
+                </Main.FlexboxThree>
+                </Route>
+                <Route path="/">
+                <Main.FlexboxThree>
+                        <ChatBoxContainer/>
+                    </Main.FlexboxThree>
+                </Route>
+            </Switch>
             <Main.FlexboxFour>4</Main.FlexboxFour>
             </Router>
         </Main>

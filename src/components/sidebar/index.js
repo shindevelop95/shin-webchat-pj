@@ -27,7 +27,7 @@ SideBar.BtnGroup = function SideBarBtnGroup({children,...restProps}){
         const roomName = prompt("Please enter new Chirp");
 
         if(roomName){
-            db.collection("options").add({
+            db.collection("rooms").add({
                 name:roomName,
             })
         }

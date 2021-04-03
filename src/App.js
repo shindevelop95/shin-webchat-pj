@@ -1,11 +1,20 @@
 import './App.css';
+import React, {useState} from 'react'
 import {SideNavContainer} from './containers/SideNavContainer'
 import {MainContainer} from './containers/MainContainer'
+import {LoginContainer} from './containers/LoginContainer'
 
 function App() {
+  const [user,setUser] = useState(null);
   return (
     <div className="App">
-     <MainContainer/>
+    {!user?(
+      <LoginContainer/>
+      ):( 
+
+      <MainContainer/>
+      )}
+    
     </div>
   );
 }

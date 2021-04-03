@@ -16,7 +16,7 @@ export function ChatBoxContainer({}){
 
    useEffect(() => {
         if(roomId) {
-            db.collection('options').doc(roomId).
+            db.collection('rooms').doc(roomId).
             onSnapshot(snapshot => (
                 setChatBox(snapshot.data().name)
             ))
