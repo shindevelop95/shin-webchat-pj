@@ -12,6 +12,7 @@ export const Container = styled.div`
 
 export const Info = styled.div`
     margin-left:20px;
+    text-decoration:none !important;
 `;
 
 export const Header = styled.h2`

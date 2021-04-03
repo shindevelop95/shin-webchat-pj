@@ -12,7 +12,6 @@ function App() {
     {!user?(
       <LoginContainer/>
       ):( 
-
       <MainContainer/>
       )}
     

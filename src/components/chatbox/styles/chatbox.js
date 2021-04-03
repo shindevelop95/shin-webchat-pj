@@ -21,6 +21,16 @@ export const Body = styled.div`
    &::-webkit-scrollbar {
     display: none;
     }
+    .sender{
+        margin-left:auto;
+        background-color:#BC4141;
+        color:#FBFBFB;
+
+    }
+
+    .sender > .sender_inner{
+        color:#eee;
+    }
 `;
 
 export const Footer = styled.div`
@@ -68,14 +78,18 @@ export const Message = styled.p`
     font-size:20px;
     background-color:#FFFFFF;
     border-radius:10px;
-    padding:15px 20px;
+    padding:35px 30px;
     width:fit-content;
+    max-width:400px;
+    line-height:1;
+     
+   
 `;
 
 export const Timestamp = styled.span`
     position:absolute;
-    left:11%;
-    bottom:-1%;
+    left:30px;
+    bottom:18px;
     color:#B1A9A9;
-    font-size:13px;
+    font-size:11px;
 `;

@@ -15,7 +15,12 @@ export const GroupTwo = styled.div`
 flex:20%;
 background-color:#F8E9E9;
 border-radius:20px;
-margin:8px 0`
+margin:8px 0;
+ >a{
+     text-decoration:none;
+     color:#707070;
+ }
+`
 
 export const GroupThree = styled.div`
 flex:60%;

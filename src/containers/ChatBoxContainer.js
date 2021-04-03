@@ -6,6 +6,8 @@ import AddBoxIcon from '@material-ui/icons/AddBox';
 import SentimentVerySatisfiedIcon from '@material-ui/icons/SentimentVerySatisfied';
 import SendIcon from '@material-ui/icons/Send';
 import db from "../lib/firebase"
+import firebase from 'firebase'
+import {useStateValue} from '../utils/StateProvider'
 
 export function ChatBoxContainer({}){
     const [seed,setSeed] = useState("");
@@ -13,6 +15,10 @@ export function ChatBoxContainer({}){
     const [chatBox,setChatBox] = useState(""); 
     const [input, setInput] = useState("");
     const [messages,setMessages] = useState([]); 
+    const [{user},dispatch] = useStateValue();
+    const [sender, setSender] = useState(true);
+    const [receiver,setReceiver] = useState(true);
+
     console.log(input);
 
    useEffect(() => {
@@ -41,6 +47,13 @@ export function ChatBoxContainer({}){
     const sendMessage = (e) => {
         e.preventDefault();
         console.log("u typed>>>", input);
+
+        db.collection('rooms').doc(roomId).collection
+        ('messages').add({
+            message:input,
+            name:user.displayName,
+            timestamp:firebase.firestore.FieldValue.serverTimestamp(),
+        })
         setInput("");
     }
     return(
@@ -52,11 +65,13 @@ export function ChatBoxContainer({}){
                     <SideChat.SubHeader>Last Message</SideChat.SubHeader>
                 </SideChat.Info>
             </ChatBox.Heading>
-            {messages.map((message) => (
+           
                 <ChatBox.Body>
-                <ChatBox.Message>{message.message}<ChatBox.Timestamp>52 mins ago</ChatBox.Timestamp></ChatBox.Message>
-            </ChatBox.Body>
-            ))}
+                {messages.map((message) => (
+                    <ChatBox.Message className = {message.name === user.displayName? "sender":"receiver"}>{message.message}<ChatBox.Timestamp className="sender_inner">52 mins ago</ChatBox.Timestamp></ChatBox.Message>
+                    ))}
+                </ChatBox.Body>
+           
             <ChatBox.Footer>
                 <ChatBox.Form>
                     <AddBoxIcon color="secondary"/>
