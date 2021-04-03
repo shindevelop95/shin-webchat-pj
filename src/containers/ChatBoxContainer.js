@@ -12,6 +12,7 @@ export function ChatBoxContainer({}){
     const {roomId} = useParams();
     const [chatBox,setChatBox] = useState(""); 
     const [input, setInput] = useState("");
+    const [messages,setMessages] = useState([]); 
     console.log(input);
 
    useEffect(() => {
@@ -20,6 +21,16 @@ export function ChatBoxContainer({}){
             onSnapshot(snapshot => (
                 setChatBox(snapshot.data().name)
             ))
+
+            db.collection("rooms")
+            .doc(roomId)
+            .collection("messages")
+            .orderBy("timestamp","asc")
+            .onSnapshot((snapshot) => 
+                setMessages(snapshot.docs.map((doc) => 
+                    doc.data()
+                ))
+            )
         }
     },[roomId])
 
@@ -41,9 +52,11 @@ export function ChatBoxContainer({}){
                     <SideChat.SubHeader>Last Message</SideChat.SubHeader>
                 </SideChat.Info>
             </ChatBox.Heading>
-            <ChatBox.Body>
-                <ChatBox.Message>Hey! What is up?<ChatBox.Timestamp>52 mins ago</ChatBox.Timestamp></ChatBox.Message>
+            {messages.map((message) => (
+                <ChatBox.Body>
+                <ChatBox.Message>{message.message}<ChatBox.Timestamp>52 mins ago</ChatBox.Timestamp></ChatBox.Message>
             </ChatBox.Body>
+            ))}
             <ChatBox.Footer>
                 <ChatBox.Form>
                     <AddBoxIcon color="secondary"/>

@@ -8,8 +8,11 @@ import PeopleIcon from '@material-ui/icons/People';
 import SettingsIcon from '@material-ui/icons/Settings';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import {Link} from 'react-router-dom'
+import { useStateValue } from '../utils/StateProvider';
+import { Avatar} from '@material-ui/core'
 
 export function SideNavContainer({}){
+    const [{user},dispatch] = useStateValue();
     return(
         <SideNav>
         <Link to ="/">
@@ -34,7 +37,7 @@ export function SideNavContainer({}){
                     <SettingsIcon/>
                 </SideNav.Button>
                 <SideNav.Button>
-                    <AccountCircleIcon/>
+                    <Avatar src={user?.photoURL}/>
                 </SideNav.Button> 
             </SideNav.Group>
         </SideNav>

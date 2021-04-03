@@ -6,10 +6,12 @@ import { SideChatContainer } from './SideChatContainer'
 import {ChatBoxContainer} from './ChatBoxContainer'
 import {BrowserRouter as Router, Switch,Route} from 'react-router-dom'
 import db from "../lib/firebase"
+import { useStateValue } from '../utils/StateProvider'
 
 
 export function MainContainer({}){
     const [options, setOptions] = useState([])
+
 
     useEffect(() => {
        const unsubscribe = db.collection("rooms").onSnapshot((snapshot) => 
