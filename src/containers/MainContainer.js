@@ -10,23 +10,7 @@ import { useStateValue } from '../utils/StateProvider'
 
 
 export function MainContainer({}){
-    const [options, setOptions] = useState([])
-
-
-    useEffect(() => {
-       const unsubscribe = db.collection("rooms").onSnapshot((snapshot) => 
-            setOptions(
-                snapshot.docs.map((doc) => ({
-                    id:doc.id,
-                    data:doc.data(),
-                }))
-            )
-        )
-
-        return () => {
-            unsubscribe();
-        }
-    })
+  
     return(
         <Main>
             <Router>
@@ -35,9 +19,7 @@ export function MainContainer({}){
             </Main.FlexboxOne>
             <Main.FlexboxTwo>
                 <SideBarContainer/>
-                {options.map(option => (
-                    <SideChatContainer key={option.id} id={option.id} name={option.data.name}/>
-                ))}
+                
             </Main.FlexboxTwo>
             <Switch>
                 <Route path="/rooms/:roomId">
