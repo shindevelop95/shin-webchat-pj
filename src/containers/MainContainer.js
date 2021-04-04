@@ -4,6 +4,7 @@ import {SideNavContainer} from './SideNavContainer'
 import {SideBarContainer} from './SideBarContainer'
 import { SideChatContainer } from './SideChatContainer'
 import {ChatBoxContainer} from './ChatBoxContainer'
+import {ProfileContainer} from './ProfileContainer'
 import {BrowserRouter as Router, Switch,Route} from 'react-router-dom'
 import db from "../lib/firebase"
 import { useStateValue } from '../utils/StateProvider'
@@ -33,7 +34,9 @@ export function MainContainer({}){
                     </Main.FlexboxThree>
                 </Route>
             </Switch>
-            <Main.FlexboxFour>4</Main.FlexboxFour>
+            <Main.FlexboxFour>
+                <ProfileContainer/>
+            </Main.FlexboxFour>
             </Router>
         </Main>
     )

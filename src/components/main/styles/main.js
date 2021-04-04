@@ -30,4 +30,10 @@ margin:8px ;
 `
 
 export const GroupFour = styled.div`
-flex:20%;`
+flex:20%;
+background-color:#F8E9E9;
+border-radius:20px;
+margin-bottom:8px;
+margin-right:8px;
+margin-top:8px;
+`

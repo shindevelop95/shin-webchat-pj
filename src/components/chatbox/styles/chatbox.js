@@ -33,6 +33,15 @@ export const Body = styled.div`
     }
 `;
 
+export const Group = styled.div`
+    display:flex;
+    align-items:flex-end;
+
+    .MuiAvatar-root{
+        margin:20px;
+    }
+`
+
 export const Footer = styled.div`
    width:90%;
    height:50px;

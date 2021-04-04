@@ -68,7 +68,10 @@ export function ChatBoxContainer({}){
            
                 <ChatBox.Body>
                 {messages.map((message) => (
+                    <ChatBox.Group>
                     <ChatBox.Message className = {message.name === user.displayName? "sender":"receiver"}>{message.message}<ChatBox.Timestamp className="sender_inner">52 mins ago</ChatBox.Timestamp></ChatBox.Message>
+                    <Avatar src={user?.photoURL}/>
+                    </ChatBox.Group>
                     ))}
                 </ChatBox.Body>
            
