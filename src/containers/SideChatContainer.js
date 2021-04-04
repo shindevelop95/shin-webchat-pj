@@ -29,7 +29,7 @@ export function SideChatContainer({id, name}){
             <Avatar src={`https://avatars.dicebear.com/api/human/${seed}.svg`}/>
             <SideChat.Info>
                 <SideChat.Header>{name}</SideChat.Header>
-                <SideChat.SubHeader>{messages[0]?.message.substring(0,10)}</SideChat.SubHeader>
+                <SideChat.SubHeader>{messages[0]?.message.substring(0,10)}...</SideChat.SubHeader>
             </SideChat.Info>
         </SideChat>
         </Link>
