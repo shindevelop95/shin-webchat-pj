@@ -128,7 +128,7 @@ export const PinGroup = styled.div`
 
 export const PinText = styled.p`
     margin:auto;
-    font-size:10px;
+    font-size:12px;
     font-style:italic;
     text-align:center;
     padding:10px;

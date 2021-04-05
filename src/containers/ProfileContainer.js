@@ -18,7 +18,7 @@ export function ProfileContainer({}){
             <Profile.Group>
                 <Avatar src={user?.photoURL}/>
                 <Profile.Header>{user?.displayName}</Profile.Header>
-                <Profile.SubHeader>Designer and Front End Developer</Profile.SubHeader>
+                <Profile.SubHeader>Designer and Frontend Developer</Profile.SubHeader>
             </Profile.Group>
             <Profile.Tag>
                 <Profile.Header>Information</Profile.Header>
@@ -80,7 +80,7 @@ export function ProfileContainer({}){
                    <StarIcon/>
                    <Profile.PinHeader>Monthly Coding Challenge</Profile.PinHeader>
                </Profile.PinGroup>
-               <Profile.PinText>About CodeChef Monthly Programming Contests: CodeChef was created as a community platform to help coders compete against each other and make it big in the world of computer programming.</Profile.PinText>
+               <Profile.PinText>About Chirpee Monthly Programming Contests: Chirpee was created as a community platform to help coders compete against each other and make it big in the world of computer programming.</Profile.PinText>
             </Profile.Content>
         </Profile>
     )
