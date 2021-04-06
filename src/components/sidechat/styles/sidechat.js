@@ -6,8 +6,14 @@ export const Container = styled.div`
     justify-content:start;
     width:80%;
     margin:0 auto;
-    border-bottom:1px solid #C7C3C3;
+    border-bottom:2px solid #C7C3C3;
+    transition:0.5s;
     cursor:pointer;
+    &:hover{
+        border-bottom:2px solid #E32828;
+    }
+
+   
 `;
 
 export const Info = styled.div`

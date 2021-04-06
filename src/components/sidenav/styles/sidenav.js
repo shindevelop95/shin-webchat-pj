@@ -17,6 +17,10 @@ export const Group = styled.div`
     color: #888787;
     padding: 10px 0;
     }
+
+    .active_icon{
+        color:#E32828!important;
+    }
 `
 
 export const Logo = styled.div`
