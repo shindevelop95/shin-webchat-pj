@@ -24,11 +24,37 @@ export const Info = styled.div`
 export const Header = styled.h2`
     font-size:20px;
     line-height:0.5;
+    @media only screen and (max-width:1200px) {
+        font-size:18px;
+        line-height:1
+    } 
+
+    @media only screen and (max-width: 992px) {
+        font-size:16px;
+        line-height:1
+    }
+    @media only screen and (max-width: 768px) {
+        font-size:14px;
+        line-height:1
+    } 
 `;
 
 export const SubHeader = styled.h3`
     font-size:20px;
     font-weight:normal;
-    line-height:0.5;
+  
     color:#707070;
+    @media only screen and (max-width:1200px) {
+        font-size:18px;
+        line-height:1
+    } 
+
+    @media only screen and (max-width: 992px) {
+        font-size:16px;
+        line-height:1
+    }
+    @media only screen and (max-width: 768px) {
+        font-size:14px;
+        line-height:1
+    } 
 `;

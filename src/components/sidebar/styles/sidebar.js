@@ -10,9 +10,32 @@ export const ButtonText = styled.h2`
     font-size:20px;
     padding-left:10px;
     border-left:2px solid #C7C3C3;
+    @media only screen and (max-width:1200px) {
+        font-size:18px;
+    } 
+
+    @media only screen and (max-width: 992px) {
+        font-size:16px;
+    }
+    @media only screen and (max-width: 768px) {
+        font-size:14px;
+    } 
+    
 `;
 
-export const Header = styled.h1``;
+export const Header = styled.h1`
+    font-size:30px;
+    @media only screen and (max-width:1200px) {
+        font-size:26px;
+    } 
+
+    @media only screen and (max-width: 992px) {
+        font-size:22px;
+    }
+    @media only screen and (max-width: 768px) {
+        font-size:18px;
+    } 
+`;
 
 export const Btn = styled.div`
 
@@ -21,7 +44,7 @@ export const Btn = styled.div`
 export const Group = styled.div`
     display:flex;
     align-items:center;
-    width:90%;
+    width:95%;
     font-size:20px;
     margin:auto;
     height:35px;
@@ -36,8 +59,6 @@ export const Group = styled.div`
             height:30px!important;
             width:30px!important;
     }
-
-
 `
 
 export const BtnGroup = styled.button`
@@ -57,12 +78,14 @@ export const BtnGroup = styled.button`
             color:white;
         }
     }
+
 `;
 
 export const Input = styled.input`
     background-color:#ECECEC;
     height:30px;
     border:none;
+    width:100%;
     
     &:focus{
         outline:none;
